@@ -29,7 +29,11 @@ why - reduce redundancy, reduce errors, improve readability, reuse
 
 ## Printing Methods
 
-Consider the structure of a knock-knock joke.  
+Consider the repetitive structure of a knock-knock joke.  
+The only difference between two jokes is:
+
+1. The **name** of who is at the door, and
+2. The **punchline**.
 
 | Joke#1 | Joke#2 |
 | --- | ----------- |
@@ -38,6 +42,26 @@ Consider the structure of a knock-knock joke.
 | Nobel. | Figs. |
 | Nobel who? | Figs who? |
 | Nobel…that’s why I knocked! | Figs the doorbell, it's not working!  |
+
+Consider the following code that prints both jokes.  The print statements are similar.
+
+```java
+public class JokeMakerStarter {
+
+	public static void main(String[] args) {
+		
+		String name = "Nobel";
+		String punchline = "Nobel…that’s why I knocked!";
+		
+		System.out.println("Knock knock");
+		System.out.println("Who's there");
+		System.out.println(name);
+		System.out.println(name + " who");
+		System.out.println(punchline);
+		
+	}
+}
+``` 
 
 
 
