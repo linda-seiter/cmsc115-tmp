@@ -31,20 +31,13 @@ why - reduce redundancy, reduce errors, improve readability, reuse
 
 Consider the structure of a knock-knock joke.  
 
-| Syntax | Description |
+| Joke#1 | Joke#2 |
 | --- | ----------- |
-| Header | Title |
-| Paragraph | Text |
-
-
-
-
-|-------|--------| 
-|Knock-knock.|Knock-knock.|
-|Who's there?|Who' there?|
-|Tank.|Nobel.|
-
-
+| Knock-knock. | Knock-knock. |
+| Who's there? | Who's there? |
+| Nobel. | Figs. |
+| Nobel who? | Figs who? |
+| Nobel…that’s why I knocked! | Figs the doorbell, it's not working!  |
 
 
 
