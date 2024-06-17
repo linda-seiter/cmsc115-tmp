@@ -43,11 +43,10 @@ The only difference between two jokes is:
 |4| Nobel who? | Figs who? |
 |5| Nobel…that’s why I knocked! | Figs the doorbell, it's not working!  |
 
-The following program prints both jokes. The variables `name` and `punchline` are used to demonstrate the common structure of all knock-knock jokes. 
+The `main()` method listed below contains sample code to print both jokes. The variables `name` and `punchline` are used to demonstrate the common structure of all knock-knock jokes. 
 
 ```java
-
-public class JokeMakerStarter {
+public class JokeMakerCodeDuplication {
 
 	public static void main(String[] args) {
 		
@@ -75,12 +74,11 @@ public class JokeMakerStarter {
 }
 ```
 
-The print statements are identical for each joke. Notice the punctuation was omitted at the end of each joke line. To fix this, we would need to perform similar updates to the print statements for each joke.  While this example is trivial, code duplication can cause maintenance issues in real applications as it may be difficult to locate and consistently update all occurrences of duplicated code.
+The print statements are identical for each joke. Notice the punctuation was omitted at the end of each line. If we want to add punctuation, we must perform similar updates to the print statements associated with each joke.  While this example is trivial, code duplication can cause serious maintenance problems in real applications as it is difficult to locate and consistently update all occurrences of duplicated code.
  
-We will eliminate the duplicate code by defining a new method that tells a joke.  
-A method is defined within a Java class and consists of a header and body.  The  header is also called a method signature, and includes an access modifier, static modifier, return type, name, and formal parameters. The method body consists of a set of statements enclosed in curly braces { }.
+We will eliminate the redundant code by defining a new method that tells a knock-knock joke.  A method is defined within a Java class and consists of a header and body.  The  header is also called a method signature, and includes an access modifier, static modifier, return type, name, and formal parameters. The method body consists of a set of statements enclosed in curly braces { }.
 
-![images/methodsignature.png](tellJoke method header and body)
+![tellJoke method header and body](images/methodsignature.png)
 
 - Most of the methods we'll write will be declared using the `public` and `static` modifiers.  We'll cover what these modifiers mean in a later lesson.   
 - The return type indicates the type of value returned by the method.  The `tellJoke()` method prints to the console but does not return a value so the return type is `void`.  
@@ -88,13 +86,32 @@ A method is defined within a Java class and consists of a header and body.  The 
 
 We call the `tellJoke` method by passing in values for `name` and `punchline` as shown below.  The values passed into the method call are called `arguments` or `actual parameters`, and should correspond to the order and type of the formal parameters. :
 
-`![images/methodcall.png](calling tellJoke method passing values for name and punchline)
+`![calling tellJoke method passing values for name and punchline](images/methodcall.png)
 
 
 
 
-```javaa}
-```
+```java
+public class JokeMaker {
+	
+	public static void tellJoke(String who, String punchline) {
+		System.out.println("Knock knock.");
+		System.out.println("Who's there?");
+		System.out.println(who + ".");
+		System.out.println(who + " who?");
+		System.out.println(punchline + "!");
+	}
+
+	public static void main(String[] args) {
+		tellJoke("Nobel", "No bell, that's why I knocked");
+		
+		System.out.println();
+		
+		tellJoke("Figs", "Figs the doorbell, it's not working");
+	}
+
+}}
+````
 
 
 
