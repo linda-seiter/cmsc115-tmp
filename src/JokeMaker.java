@@ -1,4 +1,3 @@
-
 public class JokeMaker {
 	
 	public static void tellJoke(String who, String punchline) {
@@ -11,9 +10,6 @@ public class JokeMaker {
 
 	public static void main(String[] args) {
 		tellJoke("Nobel", "No bell, that's why I knocked");
-		
-		System.out.println();
-		
 		tellJoke("Figs", "Figs the doorbell, it's not working");
 	}
 
