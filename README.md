@@ -74,7 +74,7 @@ What if we want to update both jokes to add punctuation? We must perform the exa
 
 ## Defining a `tellJoke()` method
  
-We will eliminate the redundancy by defining a new method called `tellJoke()`.  A method is defined within a Java class and consists of a header and body.  The  header is also called a method signature, and includes an access modifier, static modifier, return type, name, and formal parameters. The method body consists of a set of statements enclosed in curly braces { }.
+We will eliminate the code duplication by defining a new method called `tellJoke()`.  A method is defined within a Java class and consists of a header and body.  The  header is also called a method signature, and includes an access modifier, static modifier, return type, name, and formal parameters. The method body consists of a set of statements enclosed in curly braces { }.
 
 ![tellJoke method header and body](images/methodsignature.png)
 
@@ -83,7 +83,7 @@ We will eliminate the redundancy by defining a new method called `tellJoke()`.  
 -  A method is typically named using a verb that describes its purpose, such as `tellJoke()`.  
 - The formal parameters `name` and `punchline` allow different values to be substituted for the joke when the method is called. The method body uses the parameter variables in the print statements.
 
-We call the `tellJoke` method by passing in values for `name` and `punchline` as shown below.  The values passed into the method call are called `arguments` or `actual parameters`, and should correspond to the order and type of the formal parameters. :
+We call the `tellJoke` method by passing in values for `name` and `punchline` as shown below.  The values passed into the method call are called `arguments` or `actual parameters`, and should correspond to the order and type of the formal parameters. 
 
 ![calling tellJoke method passing values for name and punchline](images/methodcall.png)
 
