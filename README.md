@@ -12,8 +12,8 @@ A program often requires an operation to be performed repeatedly on different da
 
 A **method** allows us to name a block of reusable code that can be called to operate on specific data values.  How do methods improve software? 
 
-- A big problem is solved by dividing into smaller pieces. We create methods to solve the pieces and then combine them to solve the bigger problem. 
-- Methods reduce or eliminate code duplication, making code easier to reuse and maintain.
+- A big problem is solved by dividing into smaller pieces. We create methods to solve the pieces and then integrate them to solve the bigger problem. 
+- Methods reduce or eliminate code duplication, making code easier to understand, reuse, and maintain.
 
 
 ## Code-Along Instructions
@@ -24,10 +24,7 @@ TODO: Walk through setup required to run the lesson.....
 ## Why code duplication is a problem
 
 Consider the repetitive structure of a knock-knock joke.  
-The only difference between the following two jokes is:
 
-1. The **name** of who is at the door, and
-2. The **punchline**.
 
 |Line| Joke#1 | Joke#2 |
 |---| --- | ----------- |
@@ -37,10 +34,15 @@ The only difference between the following two jokes is:
 |4| Nobel who? | Figs who? |
 |5| Nobel…that’s why I knocked! | Figs the doorbell, it's not working!  |
 
-The code below prints the two sample jokes. The  `name` and `punchline` variables are used to illustrate the common structure among knock-knock jokes. 
+The only difference between the two sample jokes is:
+
+1. The **name** of who is at the door, and
+2. The **punchline**.
+
+The code below prints the two sample jokes. The  `name` and `punchline` variables are used to illustrate the common structure among knock-knock jokes.  Notice the print statements are identical for each joke.
 
 ```java
-public class JokeMakerCodeDuplication {
+public class JokeMaker {
 
 	public static void main(String[] args) {
 		
@@ -68,7 +70,7 @@ public class JokeMakerCodeDuplication {
 }
 ```
 
-Notice the 5 print statements are identical for both jokes, and punctuation was accidentally omitted at the end of each line. If we want to update the jokes to add punctuation, we must perform the exact same changes to both sets of print statements.  While this example is trivial, code duplication is a maintenance issue in real applications as it is often difficult to locate and consistently update all occurrences of duplicated code.
+What if we want to update both jokes to add punctuation? We must perform the exact same changes to both sets of print statements.  While this example is trivial, code duplication is a maintenance issue in real applications as it is often difficult to locate and consistently update all occurrences of duplicated code.
 
 ## Defining a `tellJoke()` method
  
