@@ -27,7 +27,7 @@ Walk the student through any setup required to run the lesson.....
 
 why - reduce redundancy, reduce errors, improve readability, reuse
 
-## Printing Methods
+## Issues with code duplication 
 
 Consider the repetitive structure of a knock-knock joke.  
 The only difference between two jokes is:
@@ -35,23 +35,25 @@ The only difference between two jokes is:
 1. The **name** of who is at the door, and
 2. The **punchline**.
 
-| Joke#1 | Joke#2 |
-| --- | ----------- |
-| Knock-knock. | Knock-knock. |
-| Who's there? | Who's there? |
-| Nobel. | Figs. |
-| Nobel who? | Figs who? |
-| Nobel…that’s why I knocked! | Figs the doorbell, it's not working!  |
+|Line| Joke#1 | Joke#2 |
+|---| --- | ----------- |
+|1| Knock-knock. | Knock-knock. |
+|2| Who's there? | Who's there? |
+|3| Nobel. | Figs. |
+|4| Nobel who? | Figs who? |
+|5| Nobel…that’s why I knocked! | Figs the doorbell, it's not working!  |
 
-Consider the following code that prints both jokes.  The print statements are similar.
+The following program prints both jokes. The variables `name` and `punchline` are used to demonstrate the common structure of all knock-knock jokes. 
 
 ```java
+
 public class JokeMakerStarter {
 
 	public static void main(String[] args) {
 		
+		//Tell first joke
 		String name = "Nobel";
-		String punchline = "Nobel…that’s why I knocked!";
+		String punchline = "Nobel…that’s why I knocked";
 		
 		System.out.println("Knock knock");
 		System.out.println("Who's there");
@@ -59,13 +61,45 @@ public class JokeMakerStarter {
 		System.out.println(name + " who");
 		System.out.println(punchline);
 		
+		//Tell second joke
+		name = "Figs";
+		punchline = "Figs the doorbell, it's not working";
+		
+		System.out.println("Knock knock");
+		System.out.println("Who's there");
+		System.out.println(name);
+		System.out.println(name + " who");
+		System.out.println(punchline);
 	}
+
 }
-``` 
+```
+
+The print statements are identical for each joke. Notice the punctuation was omitted at the end of each joke line. To fix this, we would need to perform similar updates to the print statements for each joke.  While this example is trivial, code duplication can cause maintenance issues in real applications as it may be difficult to locate and consistently update all occurrences of duplicated code.
+ 
+We will eliminate the duplicate code by defining a new method that tells a joke.  
+A method is defined within a Java class and consists of a header and body.  The  header is also called a method signature, and includes an access modifier, static modifier, return type, name, and formal parameters. The method body consists of a set of statements enclosed in curly braces { }.
+
+![images/methodsignature.png](tellJoke method header and body)
+
+- Most of the methods we'll write will be declared using the `public` and `static` modifiers.  We'll cover what these modifiers mean in a later lesson.   
+- The return type indicates the type of value returned by the method.  The `tellJoke()` method prints to the console but does not return a value so the return type is `void`.  
+- The formal parameters `name` and `punchline` allow different values to be substituted for the joke when the method is called. The method body uses the parameter variables to customize the print statements.
+
+We call the `tellJoke` method by passing in values for `name` and `punchline` as shown below.  The values passed into the method call are called `arguments` or `actual parameters`, and should correspond to the order and type of the formal parameters. :
+
+`![images/methodcall.png](calling tellJoke method passing values for name and punchline)
 
 
 
-[Visualize using Python Tutor http://pythontutor.com](https://pythontutor.com/render.html#code=public%20class%20JokeMaker%20%7B%0A%20%20%20%20%0A%20%20%20%20public%20static%20void%20tellJoke%28String%20who,%20String%20punchline%29%20%7B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Knock%20knock%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28%22Who's%20there%3F%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28who%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28who%20%2B%20%22%20who%3F%22%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28punchline%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20tellJoke%28%22Tank%22,%20%22You're%20Welcome.%22%29%3B%0A%20%20%20%20%20%20%20%20tellJoke%28%22Nobel%22,%20%22No%20bell,%20that's%20why%20I%20knocked!%22%29%3B%0A%20%20%20%20%7D%0A%7D&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false)
+
+```javaa}
+```
+
+
+
+
+
 
 Python Tutor [http://pythontutor.com](http://pythontutor.com)
 

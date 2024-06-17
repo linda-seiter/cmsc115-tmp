@@ -6,15 +6,15 @@ public class JokeMaker {
 		System.out.println("Who's there?");
 		System.out.println(who + ".");
 		System.out.println(who + " who?");
-		System.out.println(punchline);
+		System.out.println(punchline + "!");
 	}
 
 	public static void main(String[] args) {
-		tellJoke("Nobel", "No bell, that's why I knocked!");
+		tellJoke("Nobel", "No bell, that's why I knocked");
 		
 		System.out.println();
 		
-		tellJoke("Figs", "Figs the doorbell, it's not working!");
+		tellJoke("Figs", "Figs the doorbell, it's not working");
 	}
 
 }
